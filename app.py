@@ -14,7 +14,7 @@ from glob import glob
 import platform
 import subprocess
 from facechain.utils import snapshot_download
-
+from loginmodelscopehub import hublogin
 from facechain.inference import preprocess_pose, GenPortrait
 from facechain.inference_inpaint import GenPortrait_inpaint
 from facechain.train_text_to_image_lora import prepare_dataset, data_process_fn
@@ -1005,4 +1005,5 @@ with gr.Blocks(css='style.css') as demo:
 
 if __name__ == "__main__":
     multiprocessing.set_start_method('spawn')
+    hublogin()
     demo.queue(status_update_rate=1).launch(share=True)
